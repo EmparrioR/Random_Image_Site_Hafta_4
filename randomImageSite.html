@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Rastgele Resim Listesi</title>
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-container img {
+
+            height: 250px;
+            object-fit: cover;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Resim Galerisi</h1>
+        <div class="image-container text-center" id="image-container"></div>
+    </div>
+
+    <script>
+        function getRandomImage() {
+            var imageContainer = document.getElementById("image-container");
+
+
+
+            for (var i = 0; i < 15; i++) {
+                var img = document.createElement("img");
+                img.src = "https://source.unsplash.com/random" + "?" + i;
+                img.className = "img-fluid col-lg-3"
+
+                imageContainer.appendChild(img);
+            }
+        }
+
+        window.onload = getRandomImage;
+
+    </script>
+</body>
+
+</html>
